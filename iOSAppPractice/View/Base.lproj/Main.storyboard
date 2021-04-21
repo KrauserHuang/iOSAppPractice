@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eva-c9-W6q">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
@@ -8,12 +8,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Segment View Controller-->
+        <scene sceneID="GNu-mF-7If">
+            <objects>
+                <viewController id="iK7-Tt-MDO" customClass="SegmentViewController" customModule="iOSAppPractice" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Um-Cc-ggp">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="329-Cp-feR"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="M8a-He-3O6"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="ShowPlayer" id="sGV-50-akr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AcL-IH-60L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="363" y="77"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOSAppPractice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOSAppPractice" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="61n-ct-HIq">
@@ -39,7 +58,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="46" weight="medium"/>
                                 </state>
                                 <connections>
-                                    <action selector="playNPauseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iaZ-r2-nkF"/>
+                                    <action selector="playNPausePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iaZ-r2-nkF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmM-V7-wvB">
@@ -68,6 +87,26 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" weight="medium"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGO-Rr-xIt">
+                                <rect key="frame" x="299" y="506" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                                <state key="normal" image="infinity.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" weight="medium"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ne-kD-0RJ">
+                                <rect key="frame" x="260" y="506" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                                <state key="normal" image="repeat.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="playRepeatPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K8R-Dv-bnA"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPz-SH-yoS">
                                 <rect key="frame" x="273" y="770" width="36" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -95,7 +134,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="default" weight="medium"/>
                                 </state>
                                 <connections>
-                                    <action selector="playNextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oCh-A0-obs"/>
+                                    <action selector="playNextPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oCh-A0-obs"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ilb-rh-7HR">
@@ -107,7 +146,7 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="30" scale="default" weight="medium"/>
                                 </state>
                                 <connections>
-                                    <action selector="playPreviousButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yJ2-eU-n7L"/>
+                                    <action selector="playPreviousPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yJ2-eU-n7L"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="h2s-bo-YtF">
@@ -164,10 +203,22 @@
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="19" weight="medium"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WKu-uN-Tgx">
+                                <rect key="frame" x="221" y="506" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
+                                <state key="normal" image="shuffle.circle" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="26" weight="medium"/>
+                                </state>
+                                <connections>
+                                    <action selector="playShufflePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lmA-IP-IsR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="hv5-pn-1aN"/>
                     <connections>
                         <outlet property="artistLabel" destination="cDi-ua-NfI" id="lDh-03-4W4"/>
                         <outlet property="coverImage" destination="XhN-fM-pUc" id="Oup-ys-heu"/>
@@ -175,6 +226,8 @@
                         <outlet property="playNPause" destination="lqr-ol-HxI" id="Ih6-SF-ha8"/>
                         <outlet property="playNext" destination="sDN-hY-akP" id="sMT-vJ-bb7"/>
                         <outlet property="playPrevious" destination="ilb-rh-7HR" id="qCk-qI-m6M"/>
+                        <outlet property="playRepeat" destination="5ne-kD-0RJ" id="QKH-9f-FXv"/>
+                        <outlet property="playShuffle" destination="WKu-uN-Tgx" id="ckZ-Au-hfU"/>
                         <outlet property="playingSlider" destination="ghX-ch-zx3" id="BmD-RM-CLA"/>
                         <outlet property="remainTimeLabel" destination="guw-XG-MgF" id="6Cv-cN-kae"/>
                         <outlet property="songLabel" destination="bBe-Cw-iz5" id="Uui-Ll-sdr"/>
@@ -182,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135.38461538461539" y="77.488151658767762"/>
+            <point key="canvasLocation" x="1064.6153846153845" y="77.488151658767762"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="R9r-Fe-UvZ">
@@ -192,7 +245,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_0346" translatesAutoresizingMaskIntoConstraints="NO" id="XFb-fv-S1g">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="repeat" translatesAutoresizingMaskIntoConstraints="NO" id="XFb-fv-S1g">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -203,19 +256,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jth-BE-aoH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="803" y="77"/>
+            <point key="canvasLocation" x="1822" y="77"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="l8H-XS-fGG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eva-c9-W6q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ljm-IW-H6Y">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iK7-Tt-MDO" kind="relationship" relationship="rootViewController" id="X3p-a8-a8R"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d2Q-xy-Lpz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-348" y="77"/>
         </scene>
     </scenes>
     <resources>
         <image name="Daft Punk" width="406" height="406"/>
-        <image name="IMG_0346" width="828" height="1792"/>
         <image name="airplayaudio" catalog="system" width="128" height="121"/>
         <image name="backward.fill" catalog="system" width="128" height="79"/>
         <image name="ellipsis.circle.fill" catalog="system" width="128" height="121"/>
         <image name="forward.fill" catalog="system" width="128" height="79"/>
+        <image name="infinity.circle.fill" catalog="system" width="128" height="121"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="play.fill" catalog="system" width="116" height="128"/>
         <image name="quote.bubble" catalog="system" width="128" height="110"/>
+        <image name="repeat" width="828" height="1792"/>
+        <image name="repeat.circle" catalog="system" width="128" height="121"/>
+        <image name="shuffle.circle" catalog="system" width="128" height="121"/>
         <image name="speaker.fill" catalog="system" width="128" height="128"/>
         <image name="speaker.wave.3.fill" catalog="system" width="128" height="86"/>
         <systemColor name="secondarySystemBackgroundColor">
